@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>ENTJ 승진 전쟁 v60 · 승진 티어 에셋 적용</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>ENTJ 승진 전쟁 v63 · 승진 티어표 패널 수정</title><style>
 *{box-sizing:border-box}html,body{margin:0;background:#0b101b;color:#f4f6fb;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif}body{overscroll-behavior:none}#app{max-width:960px;margin:auto;padding:9px}header{display:flex;justify-content:space-between;align-items:center;margin:2px 3px 8px}header strong{color:#ffd46c;font-size:clamp(17px,3vw,25px)}#status{font-size:12px;color:#abc0d5}#sound{background:#293d55;color:white;padding:9px 12px;border:1px solid #60748d}.frame{position:relative;overflow:hidden;border:2px solid #52677c;border-radius:14px;background:#19283a}canvas{display:block;width:100%;aspect-ratio:16/9;touch-action:none}.overlay{position:absolute;inset:0;background:#0b1323ec;display:flex;align-items:center;justify-content:center;padding:12px;z-index:2}.hidden{display:none!important}.panel{background:#21334b;border:1px solid #5c7a96;border-radius:16px;width:min(630px,100%);max-height:100%;overflow:auto;text-align:center;padding:clamp(12px,2.6vw,25px);box-shadow:0 12px 35px #0005}.panel h1{color:#ffd875;font-size:clamp(23px,4.4vw,38px);margin:5px 0 13px}.panel h2{margin:8px 0;font-size:clamp(15px,2.5vw,22px)}.panel p{line-height:1.6}.panel small{color:#b5c9db}.speech{display:flex;align-items:center;gap:12px;background:#30455e;padding:12px;border-radius:11px;text-align:left;margin:10px 0;line-height:1.6}.portrait{font-size:29px;width:47px;min-width:47px;height:47px;display:grid;place-items:center;background:#506b86;border-radius:10px}.thought{color:#ffd777;font-weight:800;margin-top:6px}button{border:0;border-radius:10px;background:#54c6e8;color:#091e30;padding:12px 17px;font-size:15px;font-weight:800;cursor:pointer;touch-action:none}.panel button{margin:7px auto 0;max-width:100%}.panel .reply{display:flex;align-items:center;text-align:left;width:100%;gap:11px;background:#24708d;color:white}.controls{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:9px 0}.cluster{display:flex;gap:7px}.controls button{background:#31445e;color:white;min-width:62px;min-height:60px;touch-action:none;user-select:none;-webkit-user-select:none}.controls .fire{background:#267c9c}.controls .shield{background:#78623e}.note{color:#a9c0d2;text-align:center;font-size:12px;line-height:1.6}.receipt{max-width:410px;margin:10px auto;padding:18px 20px;background:#f9f4e8;color:#25303d;text-align:left;border-radius:4px;box-shadow:0 6px 18px #0005}.receipt h2{text-align:center;letter-spacing:2px}.receipt .line{display:flex;justify-content:space-between;gap:8px;font-size:14px;margin:13px 0}.receipt hr{border:0;border-top:1px dashed #b0a99a}.cards{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin:18px 0}.choice{width:180px;min-height:155px;border:1px solid #66809d;border-radius:13px;background:#30445c;padding:13px}.choice .emoji{font-size:54px}.choice.locked{opacity:.6}.choice b{display:block;margin:6px 0}.finalword{font-size:clamp(30px,6.2vw,70px);font-weight:1000;line-height:1.3;color:#ffd366;text-shadow:0 0 30px #f7be5566}.finalpanel{background:linear-gradient(150deg,#181722,#3a2735);border-color:#cfab63}.count{font-size:clamp(50px,10vw,95px);color:#ffd878;font-weight:1000;margin:0}@media(max-width:540px){#app{padding:4px}.controls button{min-width:46px;min-height:54px;padding:8px;font-size:12px}.cluster{gap:4px}.panel{padding:12px}.speech{font-size:13px;padding:9px}.portrait{width:38px;min-width:38px;height:38px;font-size:23px}.receipt{padding:10px}.receipt .line{font-size:12px}.choice{width:42%;min-height:125px}}
 
 /* 승진 메달 티어표 */
@@ -123,7 +123,7 @@ header,.note{display:none!important}#app{max-width:100vw;width:100%;padding:0!im
 .medal-panel.tier-art-panel{width:100%!important;height:100%!important;max-height:none!important;max-width:none!important;overflow:hidden!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;display:flex;align-items:center;justify-content:center}
 .tier-art-window{position:relative;width:100%;aspect-ratio:16/9;max-height:100%;margin:auto}
 .tier-art-window canvas{width:100%;height:100%;display:block;object-fit:contain}
-.tier-art-confirm{position:absolute!important;left:76.98%!important;top:82.4%!important;width:16.67%!important;height:10%!important;opacity:0!important;border:0!important;cursor:pointer!important;z-index:2!important;padding:0!important;touch-action:manipulation!important}
+.tier-art-confirm{position:absolute!important;left:78.96%!important;top:83.70%!important;width:12.92%!important;height:7.78%!important;opacity:0!important;border:0!important;cursor:pointer!important;z-index:2!important;padding:0!important;touch-action:manipulation!important}
 </style></head><body><div id="app"><header><div><strong>ENTJ · 승진 전쟁</strong><div id="status">캐릭터 선택 로비</div></div><button id="sound">🔊 사운드 ON</button></header><div class="frame"><canvas id="game" width="960" height="540"></canvas><div class="overlay" id="overlay"><div class="panel" id="panel"></div></div><canvas id="uiLayer" class="ui-overlay-canvas" width="960" height="540"></canvas><div id="uiSystem"><button id="uiSound" aria-label="사운드"></button><button id="uiPause" aria-label="일시정지"></button></div><div class="controls"><div class="cluster"><button data-key="left">◀</button><button data-key="right">▶</button></div><div class="cluster"><button data-key="jump">↑ 점프</button><button data-key="fire" class="fire">🔫 발사</button><button data-key="shield" class="shield" id="shield">🛡 F</button><button data-key="heal" class="shield" id="heal" style="display:none">☕ E ×1</button><button data-key="boost" class="fire" id="boost" style="display:none">⚡ Q ×1</button></div></div></div><div class="note">로비: ←/→ 선택 · Space 결정 · 마우스/터치 가능<br>전투: A/D 또는 ←/→ 이동 · W/↑ 점프 · Space 발사(길게 누르면 연사) · 보너스에서는 ↑/↓ 조준 · F 보호막 · E 커피 회복 · Q 부스터 (부장전: 센트리건 설치) · 사격 사거리 제한 · 치트키 K 전체 처치 / B 보너스 통과 / L 부장전 바로가기<br>아이패드/모바일: 하단 터치 버튼 · 여러 버튼 동시 터치 가능 · 최종전: Q 버튼으로 센트리건 2대까지 즉시 설치 · 설치 후 이동 불가 · 20초 뒤 폭발</div></div><script>
 (()=>{'use strict';
 
@@ -417,13 +417,19 @@ function renderTierCanvas(active,pressed=false,reveal=1){
  const ctx=canvas.getContext('2d');ctx.clearRect(0,0,960,540);
  const art=(key,x,y,w,h,alpha=1)=>{const im=tierArtImages[key];if(im&&im.complete&&im.naturalWidth){ctx.globalAlpha=alpha;ctx.drawImage(im,x,y,w,h);ctx.globalAlpha=1;}};
  const txt=(t,x,y,sz,col='#fff',align='center',weight=800)=>{ctx.save();ctx.textAlign=align;ctx.textBaseline='middle';ctx.font=`${weight} ${sz}px system-ui, "Noto Sans KR", sans-serif`;ctx.shadowColor='#000b';ctx.shadowBlur=3;ctx.fillStyle=col;ctx.fillText(t,x,y);ctx.restore()};
- // Fully opaque dark panels beneath the existing decorative frame assets.
- ctx.fillStyle='#111c30';ctx.fillRect(31,27,898,307);
- ctx.fillStyle='#111c30';ctx.fillRect(31,339,898,174);
+ // v63: frame decorations first; opaque panel fills must be ON TOP of translucent frame interiors.
  art('tier_main_frame',28,24,904,314);
  art('tier_bottom_panel',28,336,904,180);
- ctx.fillStyle='#17243a';ctx.fillRect(48,348,860,151);
- ctx.strokeStyle='#ad8346';ctx.lineWidth=1.5;ctx.strokeRect(48,348,860,151);
+ ctx.save();
+ ctx.globalAlpha=1;
+ ctx.fillStyle='#101a2b';
+ ctx.fillRect(47,57,866,264);
+ ctx.fillStyle='#152237';
+ ctx.fillRect(48,348,860,151);
+ ctx.strokeStyle='#ab844b';ctx.lineWidth=2;
+ ctx.strokeRect(47,57,866,264);
+ ctx.strokeRect(48,348,860,151);
+ ctx.restore();
  txt('ENTJ · 승진 티어표',480,79,31,'#ffcc64');txt('인턴에서 부장까지',480,113,16,'#d4dce8', 'center',650);
  const xs=[80,218,356,494,632,770];
  // Progress rail stays under the six badges; the highlighted point aligns with the current badge center.
@@ -458,8 +464,8 @@ function renderTierCanvas(active,pressed=false,reveal=1){
  txt(tierNames[active],238,407,34,'#ffd25c','left',950);
  txt(tierSlogans[active],238,444,18,'#ffffff','left',720);
  txt(active===5?'최고 직급 달성':'다음 직급  ·  '+tierNames[active+1],238,478,15,'#cdd7e5','left',650);
- art(pressed?'tier_confirm_pressed':'tier_confirm_normal',739,445,160,54);
- txt('확인',804,471,25,'#191c22','center',950);
+ art(pressed?'tier_confirm_pressed':'tier_confirm_normal',758,452,124,42);
+ txt('확인',820,473,19,'#191c22','center',950);
 }
 
 function medalSequence(unlocked,after,final=false){
@@ -742,24 +748,34 @@ function finalExtras(dt){
  if(mode!=='boss'||rank!==5)return;
  finalPulse+=dt;
  meteorClock-=dt;
- if(!meteorFlyer&&meteorClock<=0){meteorFlyer={x:1000,y:86,drops:0,fire:.30,exit:false};meteorClock=rnd(17,22);sound('warning');}
- if(meteorFlyer){const f=meteorFlyer;f.x-=f.exit?210*dt:64*dt;f.fire-=dt;
- if(f.drops<5&&f.fire<=0&&f.x<940){
-  f.drops++;f.fire=.37;
-  const px=clamp(f.x+49,35,920);
-  hazards.push({x:px,y:f.y+72,vx:clamp((player.x+20-px)*.30,-135,135),vy:140,kind:'documents',dead:false,spin:rnd(-.4,.4)});
-  sound('warning');
- }
- if(f.drops>=5)f.exit=true;
- if(f.x< -115)meteorFlyer=null;
- }
+ if(!meteorFlyer&&meteorClock<=0){
+    // Five evenly distributed screen sectors, one document per sector.
+    // Travel from right to left so the player can read and dodge each drop.
+    meteorFlyer={x:1000,y:86,drops:0,fire:.30,exit:false,lanes:[864,672,480,288,96]};
+    meteorClock=rnd(17,22);sound('warning');
+  }
+  if(meteorFlyer){
+    const f=meteorFlyer;
+    f.x-=(f.exit?245:200)*dt;
+    f.fire-=dt;
+    // Each throw triggers only after the flyer reaches the next fifth of the arena.
+    // Avoid the previous burst of five documents at the right edge.
+    if(f.drops<5&&f.fire<=0&&f.x+49<=f.lanes[f.drops]){
+      const laneX=f.lanes[f.drops];
+      f.drops++;f.fire=.24;
+      hazards.push({x:laneX,y:f.y+72,vx:0,vy:165,kind:'documents',dead:false,spin:rnd(-.25,.25)});
+      sound('warning');
+    }
+    if(f.drops>=5)f.exit=true;
+    if(f.x< -115)meteorFlyer=null;
+  }
  flameClock-=dt;if(bossAppeared&&flameClock<=0){flameClock=rnd(3.8,4.9);for(let i=0;i<3;i++)hazards.push({x:boss.x-12-i*12,y:boss.y+35+i*15,vx:-285-i*28,vy:(i-1)*28,kind:'flame',dead:false});sound('warning');burst(boss.x,boss.y+45,'#ff6a2c',22)}
  for(const tr of turrets){if(!tr.placed||tr.dead)continue;tr.life-=dt;if(tr.life<=0){turretExplode(tr);continue;}tr.cd-=dt;if(tr.reload>0){tr.reload-=dt;if(tr.reload<=0){tr.ammo=tr.maxAmmo;tr.cd=.1;}continue;}
  if(tr.ammo<=0){tr.reload=2.8;continue;}
  if(tr.cd<=0){const targetsInRange=enemies.filter(e=>!e.dead&&e.x>tr.x+25&&e.x-tr.x<800);const target=targetsInRange.sort((a,b)=>a.x-b.x)[0];const bossInRange=bossAppeared&&boss.hp>0&&boss.x>tr.x&&boss.x-tr.x<900;const enemyTarget=target||(bossInRange?boss:null);if(enemyTarget){const tx=enemyTarget.x+enemyTarget.w/2,ty=enemyTarget.y+enemyTarget.h*.43;const sx=tr.x+41,sy=tr.y+20,dist=Math.hypot(tx-sx,ty-sy)||1;bullets.push({x:sx,y:sy,vx:(tx-sx)/dist*890,vy:(ty-sy)/dist*890,damage:enemyTarget===boss?3:17,originX:sx,originY:sy,range:940,dead:false,turret:true});tr.ammo--;tr.cd=.37;burst(sx,sy,'#9ffaff',2);}}
  }
 }
-function spawnEnemy(initial=false){const isRescue=mode==='rescue',type=Math.floor(Math.random()*(isRescue?4:5));const x=initial?rnd(335,835):(isRescue?rnd(815,855):rnd(755,810));let hp=isRescue?(type===1?2:1):(type===1?2:1);let speed=isRescue?[90,155,95,260][type]:[105,108,323,230,110][type];if(rank===5&&!isRescue)speed*=.78;enemies.push({x,y:G-57,w:38,h:57,type,hp,maxHp:hp,speed:speed*(1+rank*.075),shield:(isRescue&&type===1)?1:(!isRescue&&type===2?(rank===5?1:3):0),age:0,fire:(!isRescue&&(type===0||type===4))?rnd(.25,.85):(isRescue&&type===0?rnd(.35,.65):rnd(1.0,2.1)),thrown:false,small:false,dead:false});spawned++}
+function spawnEnemy(initial=false){const isRescue=mode==='rescue',type=Math.floor(Math.random()*(isRescue?4:5));const x=initial?rnd(335,835):(isRescue?rnd(815,855):rnd(755,810));let hp=isRescue?(type===1?2:1):(type===1?2:1);let speed=isRescue?[90,155,95,260][type]:[105,108,323,230,110][type];if(rank===5&&!isRescue)speed*=.78;enemies.push({x,y:G-(isRescue&&rank===0?64:57),w:isRescue&&rank===0?44:38,h:isRescue&&rank===0?64:57,type,hp,maxHp:hp,speed:speed*(1+rank*.075),shield:(isRescue&&type===1)?1:(!isRescue&&type===2?(rank===5?1:3):0),age:0,fire:(!isRescue&&(type===0||type===4))?rnd(.25,.85):(isRescue&&type===0?rnd(.35,.65):rnd(1.0,2.1)),thrown:false,small:false,dead:false});spawned++}
 function splitEnemy(e){for(let i=0;i<3;i++)enemies.push({x:e.x+rnd(-25,25),y:G-46,w:36,h:46,type:4,hp:1,maxHp:1,speed:rnd(155,225),shield:0,age:0,fire:0,thrown:false,small:true,dead:false})}
 function splitWorkEnemy(e){for(let i=0;i<3;i++)enemies.push({x:e.x+rnd(-30,30),y:G-48,w:39,h:48,type:5,hp:1,maxHp:1,speed:rnd(175,235)*(1+rank*.06),shield:0,age:0,fire:0,thrown:false,small:true,dead:false})}
 function killEnemy(e,byPlayer){if(mode==='boss'&&byPlayer)bossKillCount++;if(e.dead)return;e.dead=true;if(mode==='rescue'&&e.type===2&&!e.small)splitEnemy(e);if(mode==='rescue'&&byPlayer)killed++;if(mode==='boss'&&e.type===3&&!e.small)splitWorkEnemy(e);if(mode==='boss'&&!e.small)bossDefeatedMinions++;burst(e.x+18,e.y+20,'#ffd58b',7,byPlayer)}
@@ -862,7 +878,7 @@ function paintEnemySprite(e){
    const height=e.small?64:102, width=height*(im.naturalWidth/im.naturalHeight);c.save();c.drawImage(im,e.x+(e.w-width)/2,G-height+4,width,height);c.restore();return true;
  }}
  const map=['enemy_talker','enemy_slacker','enemy_inssa','enemy_ojirap','enemy_inssa'];
- const kind=map[e.type]||'enemy_ojirap';const h=e.small?58:90,w=e.small?49:76;
+ const kind=map[e.type]||'enemy_ojirap';const firstRoundRescue=(rank===0&&mode==='rescue');const h=e.small?58:(firstRoundRescue?100:90),w=e.small?49:(firstRoundRescue?84:76);
  return paintPhaseArt(kind,e.x+(e.w-w)/2,G-h+5,w,h);
 }
 const bossArtwork={};
@@ -949,7 +965,14 @@ function background(){
 }
 function draw(){background();if(mode==='cinematic'){drawCinema();return}if(mode==='resultDelay'&&!bossCorpse){c.fillStyle='#080c1de8';c.fillRect(0,0,W,H);text(resultTitle,480,226,76,resultTitle.includes('FAIL')||resultTitle.includes('DEFEAT')?'#ff8989':'#ffda72');text(resultSubtitle,480,306,34,'#f4f5ff');return}if(['lobby','story','transition','result','medalSequence'].includes(mode)&&!bossCorpse){text('ENTJ · PROMOTION WAR',480,82,40,'#ffd46e');character(175,G-105,'#2fb7d2',true);character(750,G-122,'#a95762',false,true,1.25);return}if(mode==='receipt'){text('보너스 타임!',480,88,42,'#ffdb4c');text('잠시 후 게임이 시작됩니다',480,145,22,'#d9e7f2');return}if(mode==='bonus'){rect(202,18,556,96,'#10233d');text('보너스 타임!',480,54,39,'#ffe04f');text('얼마일까요?  ·  '+Math.ceil(Math.max(0,bonusSeconds))+'초',480,93,23,'#fff4b1');const sumParts=bonusOrders[rank].items.map(item=>(item[1]*item[2]).toLocaleString('ko-KR'));const sumFormula=sumParts.join(' + ')+' = ?';const formulaFont=sumParts.length>=4?21:sumParts.some(s=>s.length>=7)?24:27;rect(105,120,750,56,'#273a53');text(sumFormula,480,157,formulaFont,'#ffe58a');for(const a of targets){const w=Math.max(140,a.size*5.6);rect(a.x-8,a.y-a.size-8,w,a.size+28,a.flash>0?(a.flashCorrect?'#ffe04b':'#f24b55'):'#315a77');c.strokeStyle=a.flash>0?'#ffffff':'#7bdfff';c.lineWidth=3;c.strokeRect(a.x-8,a.y-a.size-8,w,a.size+28);text('₩'+a.price.toLocaleString('ko-KR'),a.x+w/2-8,a.y+5,a.size)}drawEntjTest(player.x,G-66);for(let i=0;i<bonusAmmo;i++)text('🔸',player.x-13+i*23,G-94,21,'#ffd56d');text('탄약 '+bonusAmmo+' / 5',player.x+33,G-125,17,'#ffe5a3');c.setLineDash([8,8]);c.strokeStyle='#ffdc79';c.lineWidth=2;c.beginPath();c.moveTo(player.x+50,player.y+28);c.lineTo(800,bonusAimY);c.stroke();c.setLineDash([]);text('↑↓ 조준 · Space 발사 / 화면 터치로 조준',480,523,18,'#d4e6f2')}else{
 /* v52: removed old HP bar and rank text from scene layer */if(player.inv<=0||Math.floor(t*14)%2===0)drawEntjTest(player.x,player.y);if(player.shield>0){c.strokeStyle='#7ad8ff';c.lineWidth=rank===5?8:6;c.beginPath();c.arc(player.x+23,player.y+4,rank===5?82:71,0,Math.PI*2);c.stroke();if(rank===5){c.strokeStyle='#83ecff55';c.lineWidth=12;c.beginPath();c.arc(player.x+23,player.y+4,90,0,Math.PI*2);c.stroke()}}
-if(mode==='rescue'||mode==='rescueLanding'){const progress=(spawned>=configs[rank].rescueTotal&&enemies.length===0)?1:Math.min(.94,killed/(configs[rank].rescueTotal+5));const yy=mode==='rescueLanding'?Math.min(G-67,62+t*190):62+(G-130)*progress;c.strokeStyle='#e9d7ad';c.lineWidth=3;c.setLineDash([6,4]);c.beginPath();c.moveTo(883,0);c.lineTo(883,yy+8);c.stroke();c.setLineDash([]);drawRescueHangingSprite(mode==='rescueLanding'?'npc_rescue_safe':'npc_rescue_hanging',833,yy-29,126,126)||character(860,yy,'#87a2c5');text(rescuePeople[rank],881,yy-12,17,'#ffe8a5');if(mode==='rescue')drawRescueTalk(t);if(mode==='rescueLanding')text('구출 성공! 안전하게 착지 중',480,137,24,'#9bf4b8');}
+if(mode==='rescue'||mode==='rescueLanding'){const progress=(spawned>=configs[rank].rescueTotal&&enemies.length===0)?1:Math.min(.94,killed/(configs[rank].rescueTotal+5));const yy=mode==='rescueLanding'?Math.min(G-67,62+t*190):62+(G-130)*progress;// Original rescue cable and ceiling winch assets (Phase01), not a dotted placeholder.
+const ropeImg=enemyPhaseArt['rescue_rope'], winchImg=enemyPhaseArt['rescue_ceiling_device'];
+if(ropeImg&&ropeImg.complete&&ropeImg.naturalWidth){
+  // Fixed cable width, length follows the rescue NPC's vertical motion.
+  c.drawImage(ropeImg,873,46,20,Math.max(32,yy-28));
+}else{c.strokeStyle='#aeb5c0';c.lineWidth=3;c.beginPath();c.moveTo(883,45);c.lineTo(883,yy+8);c.stroke();}
+if(winchImg&&winchImg.complete&&winchImg.naturalWidth){drawArtContain(c,winchImg,824,-50,118,118);}
+drawRescueHangingSprite(mode==='rescueLanding'?'npc_rescue_safe':'npc_rescue_hanging',833,yy-29,126,126)||character(860,yy,'#87a2c5');text(rescuePeople[rank],881,yy-12,17,'#ffe8a5');if(mode==='rescue')drawRescueTalk(t);if(mode==='rescueLanding')text('구출 성공! 안전하게 착지 중',480,137,24,'#9bf4b8');}
 if(mode==='boss'||mode==='bossDeath'||mode==='finalClear'||((mode==='resultDelay'||mode==='result')&&bossCorpse)){if(bonusCoffee>0)text('☕ E 커피 ×'+bonusCoffee,278,118,16,'#9dffb4');if(rank===5){const remain=turrets.filter(tr=>!tr.dead&&!tr.placed).length;text('🤖 Q 센트리 ×'+remain,685,118,17,'#9cf3ff')}else if(bonusBoost>0)text('⚡ Q 무적 돌진 ×'+bonusBoost,675,112,18,'#ffdc7a');if(boostTime>0)text('⚡ BOOST! '+(3-boostKills)+'명 남음',480,170,25,'#ffdb75');if(healFlash>0)text('HP 회복!',480,230,58,'#88ffb1');if(!bossAppeared){}else{/* v52: removed old boss health bar; new HUD owns health rendering */if(bossCorpse){if(!paintBossArtwork(true)){c.save();c.translate(boss.x+50,G-18);c.rotate(-Math.PI/2);character(-30,-65,'#80515b',false,false,1.55);c.restore();}text('KO!',boss.x+50,G-145,32,'#ffd875')}else{if(!paintBossArtwork(false))character(boss.x,boss.y,'#a8525e',false,true,1.55);rect(706,124,235,43,'#18263cdf');c.strokeStyle='#eaa24e';c.lineWidth=2;c.strokeRect(706,124,235,43);text(bossWords[boss.phrase],823,151,17,'#fff2d5')}}}
 if(rank===5&&(mode==='boss'||mode==='bossDeath'||mode==='finalClear')){
  for(const tr of turrets){if(!tr.placed||tr.dead)continue;rect(tr.x+3,tr.y-14,42,7,'#6c3a40');rect(tr.x+3,tr.y-14,42*tr.hp/tr.max,7,'#77f2bc');if(!drawCombatSprite('item_sentry_gun',tr.x-19,tr.y-5,82,64)){rect(tr.x-19,tr.y+15,20,28,'#7cbdce');rect(tr.x-17,tr.y+2,17,16,'#f1c49e');rect(tr.x-19,tr.y,21,7,'#273047');rect(tr.x+5,tr.y+19,34,27,'#4f829e');rect(tr.x+10,tr.y+7,24,18,'#8ec6dc');rect(tr.x+34,tr.y+12,25,8,'#bceeff');rect(tr.x+10,tr.y+43,7,7,'#354a60');rect(tr.x+31,tr.y+43,7,7,'#354a60');}text('🤖 '+(tr.idx+1),tr.x+23,tr.y-21,14,'#b3f8ff');text('⏱'+Math.ceil(tr.life)+'초',tr.x+21,tr.y+63,15,'#ffe4a1');}
