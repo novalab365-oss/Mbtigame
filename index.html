@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>ENTJ 승진 전쟁 v63 · 승진 티어표 패널 수정</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>ENTJ 승진 전쟁 v68 · 총구 정렬 / 서류 10회 수직 투하</title><style>
 *{box-sizing:border-box}html,body{margin:0;background:#0b101b;color:#f4f6fb;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif}body{overscroll-behavior:none}#app{max-width:960px;margin:auto;padding:9px}header{display:flex;justify-content:space-between;align-items:center;margin:2px 3px 8px}header strong{color:#ffd46c;font-size:clamp(17px,3vw,25px)}#status{font-size:12px;color:#abc0d5}#sound{background:#293d55;color:white;padding:9px 12px;border:1px solid #60748d}.frame{position:relative;overflow:hidden;border:2px solid #52677c;border-radius:14px;background:#19283a}canvas{display:block;width:100%;aspect-ratio:16/9;touch-action:none}.overlay{position:absolute;inset:0;background:#0b1323ec;display:flex;align-items:center;justify-content:center;padding:12px;z-index:2}.hidden{display:none!important}.panel{background:#21334b;border:1px solid #5c7a96;border-radius:16px;width:min(630px,100%);max-height:100%;overflow:auto;text-align:center;padding:clamp(12px,2.6vw,25px);box-shadow:0 12px 35px #0005}.panel h1{color:#ffd875;font-size:clamp(23px,4.4vw,38px);margin:5px 0 13px}.panel h2{margin:8px 0;font-size:clamp(15px,2.5vw,22px)}.panel p{line-height:1.6}.panel small{color:#b5c9db}.speech{display:flex;align-items:center;gap:12px;background:#30455e;padding:12px;border-radius:11px;text-align:left;margin:10px 0;line-height:1.6}.portrait{font-size:29px;width:47px;min-width:47px;height:47px;display:grid;place-items:center;background:#506b86;border-radius:10px}.thought{color:#ffd777;font-weight:800;margin-top:6px}button{border:0;border-radius:10px;background:#54c6e8;color:#091e30;padding:12px 17px;font-size:15px;font-weight:800;cursor:pointer;touch-action:none}.panel button{margin:7px auto 0;max-width:100%}.panel .reply{display:flex;align-items:center;text-align:left;width:100%;gap:11px;background:#24708d;color:white}.controls{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:9px 0}.cluster{display:flex;gap:7px}.controls button{background:#31445e;color:white;min-width:62px;min-height:60px;touch-action:none;user-select:none;-webkit-user-select:none}.controls .fire{background:#267c9c}.controls .shield{background:#78623e}.note{color:#a9c0d2;text-align:center;font-size:12px;line-height:1.6}.receipt{max-width:410px;margin:10px auto;padding:18px 20px;background:#f9f4e8;color:#25303d;text-align:left;border-radius:4px;box-shadow:0 6px 18px #0005}.receipt h2{text-align:center;letter-spacing:2px}.receipt .line{display:flex;justify-content:space-between;gap:8px;font-size:14px;margin:13px 0}.receipt hr{border:0;border-top:1px dashed #b0a99a}.cards{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin:18px 0}.choice{width:180px;min-height:155px;border:1px solid #66809d;border-radius:13px;background:#30445c;padding:13px}.choice .emoji{font-size:54px}.choice.locked{opacity:.6}.choice b{display:block;margin:6px 0}.finalword{font-size:clamp(30px,6.2vw,70px);font-weight:1000;line-height:1.3;color:#ffd366;text-shadow:0 0 30px #f7be5566}.finalpanel{background:linear-gradient(150deg,#181722,#3a2735);border-color:#cfab63}.count{font-size:clamp(50px,10vw,95px);color:#ffd878;font-weight:1000;margin:0}@media(max-width:540px){#app{padding:4px}.controls button{min-width:46px;min-height:54px;padding:8px;font-size:12px}.cluster{gap:4px}.panel{padding:12px}.speech{font-size:13px;padding:9px}.portrait{width:38px;min-width:38px;height:38px;font-size:23px}.receipt{padding:10px}.receipt .line{font-size:12px}.choice{width:42%;min-height:125px}}
 
 /* 승진 메달 티어표 */
@@ -289,7 +289,7 @@ let uiPaused=false;
 document.getElementById('uiPause').addEventListener('click',()=>{if(uiPaused||!['rescue','boss','bonus'].includes(mode))return;uiPaused=true;keys.left=keys.right=keys.fire=false;show('<h2>일시정지</h2><button id="uiResume">계속하기</button>');document.getElementById('uiResume').addEventListener('click',()=>{uiPaused=false;hide()});});
 
 const cv=document.getElementById('game'),c=cv.getContext('2d'),overlay=document.getElementById('overlay'),panel=document.getElementById('panel'),status=document.getElementById('status'),shieldBtn=document.getElementById('shield');const W=960,H=540,G=456,ranks=['인턴','주임','대리','과장','차장','부장'],next=['주임','대리','과장','차장','부장'],bossNames=['기획팀장 BLUE','기획팀장 RED','기획실장 BLUE','기획실장 RED','기획이사 BLUE','기획이사 RED'],bossWords=['그냥 해달라고 해!','꼭 필요한 거라고 해!','밀어붙여!','일단 진행하라고 해!','오늘까지 해달라고 해!'],rescueNames=['수다쟁이','월급루팡','인싸','오지랖','인싸 분신'],workNames=['일정 폭탄병','업무 투척병','마감 압박병','긴급 요청충','스케줄 테러범','긴급 요청충 분신'],thoughts=['이제 시작이다.','이 정도는 쉽지.','더 높은 영향력이 필요해.','이제 날 멈출 순 없어.','정상까지 얼마 안 남았다.'],publicLines=['예! 승진했다! 열심히 하겠습니다! ㅎㅎ','감사합니다! 더 열심히 하겠습니다!','믿어주셔서 감사합니다!','앞으로도 최선을 다하겠습니다!','회사에 꼭 필요한 사람이 되겠습니다!'];
-const configs=ranks.map((_,i)=>({maxHp:100+i*20,rescueTotal:[9,18,22,26,30,0][i],rescueInitial:[3,4,5,6,7,0][i],rescueMax:[4,6,7,8,9,0][i],bossHp:[400,540,700,850,1050,2188][i],bossTotal:[18,22,28,32,38,100][i],bossMax:[5,6,7,8,9,18][i],damage:8+i*2,gun:12+i*2,rate:[2.5,2.3,2.1,1.9,1.7,1.5][i]}));
+const configs=ranks.map((_,i)=>({maxHp:100+i*20,rescueTotal:[9,18,22,26,30,0][i],rescueInitial:[3,4,5,6,7,0][i],rescueMax:[4,6,7,8,9,0][i],bossHp:[400,540,700,850,1050,2188][i],bossTotal:[18,22,22,32,38,100][i],bossMax:[5,6,7,8,9,18][i],damage:8+i*2,gun:12+i*2,rate:[2.5,2.3,2.1,1.9,1.7,1.5][i]}));
 let lobbySelection=0,lobbyCompleted=false;let rank=0,stage=0,mode='lobby',t=0,last=0,keys={left:false,right:false,fire:false},player=null,bullets=[],enemies=[],hazards=[],papers=[],coffees=[],zones=[],particles=[],targets=[],boss=null,spawned=0,killed=0,spawnClock=0,coffeeClock=0,shotClock=0,bonusSeconds=30,targetClock=0,bonusAmmo=5,bonusElapsed=0,bonusAimY=270,bonusCorrectSpawned=false,bonusCoffee=0,bonusBoost=0,coffeeEarned=false,receiptSeconds=5,ending=false,cinemaTime=0,cinemaDuration=12,aimY=null,winRescue=false,bossAppeared=false,bossDefeatedMinions=0,resultTimer=0,resultAction=null,resultTitle='',resultSubtitle='',bossStomp=0,healFlash=0,boostTime=0,boostKills=0,bonusHit=null,bonusHitTime=0,bossDeathTime=0,bossCorpse=false,bossFightTime=0,bossKillCount=0,clearStats=null,clearStamp=0,finalGradeSound=false,turrets=[],turretMode=-1,dragTurret=-1,meteorFlyer=null,meteorClock=0,flameClock=0,finalPulse=0,tutorialSeen={move:false,fire:false,jump:false,shield:false,heal:false}; 
 const bonusTemplates=[
  {title:'대리님들 커피 5잔',items:[['아이스 아메리카노',3000,6000,3],['녹차 프라프치노',4000,7000,1],['자몽에이드',4000,7000,1]],reply:'네, 주문 정리하겠습니다.',line:'커피 한 잔씩 합시다. 누가 다녀올래요?'},
@@ -412,24 +412,19 @@ for(const [k,v] of Object.entries(tierArtData)){
 const tierNames=['인턴','주임','대리','과장','차장','부장'];
 const tierArtKeys=['intern','junior','assistant','manager','senior_manager','director'];
 const tierSlogans=['드디어 첫 출근! 잘해야지!','이제부터 진짜 회사 생활 시작이다.','일은 늘고, 책임도 늘었다.','이제는 실력으로 증명할 차례.','정상이 얼마 남지 않았다.','마침내 정상에 올랐다!'];
-function renderTierCanvas(active,pressed=false,reveal=1){
+function renderTierCanvas(active,pressed=false,reveal=1,burst=0){
  const canvas=document.getElementById('tierArtCanvas');if(!canvas)return;
  const ctx=canvas.getContext('2d');ctx.clearRect(0,0,960,540);
  const art=(key,x,y,w,h,alpha=1)=>{const im=tierArtImages[key];if(im&&im.complete&&im.naturalWidth){ctx.globalAlpha=alpha;ctx.drawImage(im,x,y,w,h);ctx.globalAlpha=1;}};
  const txt=(t,x,y,sz,col='#fff',align='center',weight=800)=>{ctx.save();ctx.textAlign=align;ctx.textBaseline='middle';ctx.font=`${weight} ${sz}px system-ui, "Noto Sans KR", sans-serif`;ctx.shadowColor='#000b';ctx.shadowBlur=3;ctx.fillStyle=col;ctx.fillText(t,x,y);ctx.restore()};
- // v63: frame decorations first; opaque panel fills must be ON TOP of translucent frame interiors.
+ // v66: make the panel BACKGROUND opaque, not an overlay on top of decorative textures.
+ // The original frame assets (with their geometric patterns) remain completely visible.
+ ctx.save();ctx.globalAlpha=1;ctx.fillStyle='#081322';ctx.fillRect(0,0,960,540);
+ ctx.fillStyle='#101d31';ctx.fillRect(28,24,904,314);
+ ctx.fillStyle='#15243a';ctx.fillRect(28,336,904,180);
+ ctx.restore();
  art('tier_main_frame',28,24,904,314);
  art('tier_bottom_panel',28,336,904,180);
- ctx.save();
- ctx.globalAlpha=1;
- ctx.fillStyle='#101a2b';
- ctx.fillRect(47,57,866,264);
- ctx.fillStyle='#152237';
- ctx.fillRect(48,348,860,151);
- ctx.strokeStyle='#ab844b';ctx.lineWidth=2;
- ctx.strokeRect(47,57,866,264);
- ctx.strokeRect(48,348,860,151);
- ctx.restore();
  txt('ENTJ · 승진 티어표',480,79,31,'#ffcc64');txt('인턴에서 부장까지',480,113,16,'#d4dce8', 'center',650);
  const xs=[80,218,356,494,632,770];
  // Progress rail stays under the six badges; the highlighted point aligns with the current badge center.
@@ -450,6 +445,42 @@ function renderTierCanvas(active,pressed=false,reveal=1){
   }
   if(i>active)art('tier_lock',x+45,232,26,26);
   txt(tierNames[i],x+58,279,18,i===active&&unlock>.9?'#ffd369':'#f1f4fb');
+ }
+ // v68: a crisp, short celebratory burst at the end of the badge-change animation.
+ // Draw ABOVE the gold badge assets, without replacing the original frame or patterns.
+ if(burst>0){
+  const bx=xs[active]+58,by=196;
+  const pulse=Math.sin(Math.PI*burst); // bright in the middle, fades cleanly at the end
+  ctx.save();
+  ctx.globalCompositeOperation='screen';
+  const halo=ctx.createRadialGradient(bx,by,5,bx,by,128);
+  halo.addColorStop(0,`rgba(255,255,241,${.70*pulse})`);
+  halo.addColorStop(.18,`rgba(255,223,122,${.54*pulse})`);
+  halo.addColorStop(.48,`rgba(255,178,35,${.22*pulse})`);
+  halo.addColorStop(1,'rgba(255,178,35,0)');
+  ctx.fillStyle=halo;ctx.beginPath();ctx.arc(bx,by,128,0,Math.PI*2);ctx.fill();
+  ctx.translate(bx,by);
+  const radius=48+36*burst;
+  ctx.strokeStyle=`rgba(255,246,196,${.98*pulse})`;
+  ctx.shadowColor='#ffe18a';ctx.shadowBlur=19;
+  ctx.lineCap='round';
+  for(let j=0;j<12;j++){
+   const a=(j*Math.PI)/6;
+   const inner=26+8*burst,outer=radius+(j%3===0?17:0);
+   ctx.lineWidth=j%3===0?4.4:2.2;
+   ctx.beginPath();ctx.moveTo(Math.cos(a)*inner,Math.sin(a)*inner);
+   ctx.lineTo(Math.cos(a)*outer,Math.sin(a)*outer);ctx.stroke();
+  }
+  for(let j=0;j<16;j++){
+   const a=(j*2.399963229728653)+.5;
+   const r=57+72*burst+(j%4)*4;
+   const x=Math.cos(a)*r,y=Math.sin(a)*r;
+   const sz=(j%3===0?6:3.5)*pulse;
+   ctx.fillStyle=`rgba(255,239,166,${.92*pulse})`;
+   ctx.beginPath();ctx.moveTo(x-sz,y);ctx.lineTo(x+sz,y);
+   ctx.moveTo(x,y-sz);ctx.lineTo(x,y+sz);ctx.strokeStyle=ctx.fillStyle;ctx.lineWidth=1.8;ctx.stroke();
+  }
+  ctx.restore();
  }
  // Reuse the existing ENTJ portrait instead of a rank medal in the bottom panel.
  ctx.save();ctx.fillStyle='#253a54';ctx.beginPath();ctx.arc(133,425,65,0,Math.PI*2);ctx.fill();
@@ -474,26 +505,30 @@ function medalSequence(unlocked,after,final=false){
  show(`<div class="tier-art-window"><canvas id="tierArtCanvas" width="960" height="540" aria-label="${tierNames[active]} 승진 티어표"></canvas><button id="tierConfirm" class="tier-art-confirm" aria-label="확인, 다음 라운드 진행"></button></div>`,'medal-panel tier-art-panel');
  let completed=false;const finish=()=>{if(completed||mode!=='medalSequence')return;completed=true;sound('select');after()};
  const btn=document.getElementById('tierConfirm');
- let tierAnimStart=0,tierProgress=0,tierPressed=false;
+ let tierAnimStart=0,tierProgress=0,tierPressed=false,tierBurst=0;
+ const tierChangeDuration=active===0?850:1900;
+ const tierBurstDuration=820;
  const animateTier=(stamp)=>{
   if(mode!=='medalSequence'||completed)return;
   if(!tierAnimStart)tierAnimStart=stamp;
-  tierProgress=Math.min(1,(stamp-tierAnimStart)/(active===0?850:1900));
-  renderTierCanvas(active,tierPressed,tierProgress);
-  if(tierProgress<1)requestAnimationFrame(animateTier);
+  const elapsed=stamp-tierAnimStart;
+  tierProgress=Math.min(1,elapsed/tierChangeDuration);
+  tierBurst=elapsed>=tierChangeDuration?Math.min(1,(elapsed-tierChangeDuration)/tierBurstDuration):0;
+  renderTierCanvas(active,tierPressed,tierProgress,tierBurst);
+  if(elapsed<tierChangeDuration+tierBurstDuration)requestAnimationFrame(animateTier);
  };
- btn.addEventListener('pointerdown',()=>{tierPressed=true;renderTierCanvas(active,true,tierProgress)});
- btn.addEventListener('pointerup',()=>{tierPressed=false;renderTierCanvas(active,false,tierProgress)});
+ btn.addEventListener('pointerdown',()=>{tierPressed=true;renderTierCanvas(active,true,tierProgress,tierBurst)});
+ btn.addEventListener('pointerup',()=>{tierPressed=false;renderTierCanvas(active,false,tierProgress,tierBurst)});
  btn.addEventListener('pointercancel',()=>{tierPressed=false;renderTierCanvas(active,false,tierProgress)});
  btn.addEventListener('click',finish);
  renderTierCanvas(active,false,0);
  requestAnimationFrame(animateTier);
- for(const im of Object.values(tierArtImages)){if(!im.complete)im.addEventListener('load',()=>renderTierCanvas(active,tierPressed,tierProgress),{once:true});}
+ for(const im of Object.values(tierArtImages)){if(!im.complete)im.addEventListener('load',()=>renderTierCanvas(active,tierPressed,tierProgress,tierBurst),{once:true});}
 }
 function internGraduation(){
- mode='transition';status.textContent='정사원 발령 · 첫 승진';
- show(`<div class="graduation"><div class="grad-star">🏅</div><h1>인턴 생활 종료!</h1><h2>정사원 배지 수여식</h2><p>첫 출근부터 몬스터를 잡아냈다.<br>팀원을 구한 ENTJ에게 드디어 정사원 배지가 주어진다!</p><div class="grad-badge">✨ 정사원 배지 획득 ✨</div><p class="grad-quote">“이제부터가 진짜 승진 전쟁이다.”</p></div>`);
- addBtn('정사원 발령! 다음 전투 ▶',()=>{rank=1;bonusCoffee=0;bonusBoost=0;coffeeEarned=false;medalSequence(1,()=>setStage(0))});
+ // The tier screen itself is the promotion award: no duplicate ceremony modal.
+ rank=1;bonusCoffee=0;bonusBoost=0;coffeeEarned=false;
+ medalSequence(1,()=>setStage(0));
 }
 // v34: in-dungeon live tutorial, never a separate overlay page.
 const tutorialSteps=[
@@ -751,22 +786,22 @@ function finalExtras(dt){
  if(!meteorFlyer&&meteorClock<=0){
     // Five evenly distributed screen sectors, one document per sector.
     // Travel from right to left so the player can read and dodge each drop.
-    meteorFlyer={x:1000,y:86,drops:0,fire:.30,exit:false,lanes:[864,672,480,288,96]};
-    meteorClock=rnd(17,22);sound('warning');
+    meteorFlyer={x:1000,y:86,drops:0,fire:.30,exit:false,lanes:[896,832,704,640,512,448,320,256,128,64]};
+    meteorClock=rnd(13,16);sound('warning');
   }
   if(meteorFlyer){
     const f=meteorFlyer;
-    f.x-=(f.exit?245:200)*dt;
+    f.x-=(f.exit?245:195)*dt;
     f.fire-=dt;
     // Each throw triggers only after the flyer reaches the next fifth of the arena.
     // Avoid the previous burst of five documents at the right edge.
-    if(f.drops<5&&f.fire<=0&&f.x+49<=f.lanes[f.drops]){
+    if(f.drops<f.lanes.length&&f.fire<=0&&f.x+49<=f.lanes[f.drops]){
       const laneX=f.lanes[f.drops];
       f.drops++;f.fire=.24;
-      hazards.push({x:laneX,y:f.y+72,vx:0,vy:165,kind:'documents',dead:false,spin:rnd(-.25,.25)});
+      hazards.push({x:laneX,y:f.y+72,vx:0,vy:195,kind:'documents',dead:false,spin:0});
       sound('warning');
     }
-    if(f.drops>=5)f.exit=true;
+    if(f.drops>=f.lanes.length)f.exit=true;
     if(f.x< -115)meteorFlyer=null;
   }
  flameClock-=dt;if(bossAppeared&&flameClock<=0){flameClock=rnd(3.8,4.9);for(let i=0;i<3;i++)hazards.push({x:boss.x-12-i*12,y:boss.y+35+i*15,vx:-285-i*28,vy:(i-1)*28,kind:'flame',dead:false});sound('warning');burst(boss.x,boss.y+45,'#ff6a2c',22)}
@@ -775,7 +810,7 @@ function finalExtras(dt){
  if(tr.cd<=0){const targetsInRange=enemies.filter(e=>!e.dead&&e.x>tr.x+25&&e.x-tr.x<800);const target=targetsInRange.sort((a,b)=>a.x-b.x)[0];const bossInRange=bossAppeared&&boss.hp>0&&boss.x>tr.x&&boss.x-tr.x<900;const enemyTarget=target||(bossInRange?boss:null);if(enemyTarget){const tx=enemyTarget.x+enemyTarget.w/2,ty=enemyTarget.y+enemyTarget.h*.43;const sx=tr.x+41,sy=tr.y+20,dist=Math.hypot(tx-sx,ty-sy)||1;bullets.push({x:sx,y:sy,vx:(tx-sx)/dist*890,vy:(ty-sy)/dist*890,damage:enemyTarget===boss?3:17,originX:sx,originY:sy,range:940,dead:false,turret:true});tr.ammo--;tr.cd=.37;burst(sx,sy,'#9ffaff',2);}}
  }
 }
-function spawnEnemy(initial=false){const isRescue=mode==='rescue',type=Math.floor(Math.random()*(isRescue?4:5));const x=initial?rnd(335,835):(isRescue?rnd(815,855):rnd(755,810));let hp=isRescue?(type===1?2:1):(type===1?2:1);let speed=isRescue?[90,155,95,260][type]:[105,108,323,230,110][type];if(rank===5&&!isRescue)speed*=.78;enemies.push({x,y:G-(isRescue&&rank===0?64:57),w:isRescue&&rank===0?44:38,h:isRescue&&rank===0?64:57,type,hp,maxHp:hp,speed:speed*(1+rank*.075),shield:(isRescue&&type===1)?1:(!isRescue&&type===2?(rank===5?1:3):0),age:0,fire:(!isRescue&&(type===0||type===4))?rnd(.25,.85):(isRescue&&type===0?rnd(.35,.65):rnd(1.0,2.1)),thrown:false,small:false,dead:false});spawned++}
+function spawnEnemy(initial=false){const isRescue=mode==='rescue',type=(!isRescue&&rank===2)?[1,2,3,4][Math.floor(Math.random()*4)]:Math.floor(Math.random()*(isRescue?4:5));const x=initial?rnd(335,835):(isRescue?rnd(815,855):rnd(755,810));let hp=isRescue?(type===1?2:1):(type===1?2:1);let speed=isRescue?[90,155,95,260][type]:[105,108,323,230,110][type];if(rank===5&&!isRescue)speed*=.78;enemies.push({x,y:G-(isRescue&&rank===0?76:57),w:isRescue&&rank===0?52:38,h:isRescue&&rank===0?76:57,firstRoundRescue:isRescue&&rank===0,type,hp,maxHp:hp,speed:speed*(1+rank*.075),shield:(isRescue&&type===1)?1:(!isRescue&&type===2?(rank===5?1:3):0),age:0,fire:(!isRescue&&(type===0||type===4))?rnd(.25,.85):(isRescue&&type===0?rnd(.35,.65):rnd(1.0,2.1)),thrown:false,small:false,dead:false});spawned++}
 function splitEnemy(e){for(let i=0;i<3;i++)enemies.push({x:e.x+rnd(-25,25),y:G-46,w:36,h:46,type:4,hp:1,maxHp:1,speed:rnd(155,225),shield:0,age:0,fire:0,thrown:false,small:true,dead:false})}
 function splitWorkEnemy(e){for(let i=0;i<3;i++)enemies.push({x:e.x+rnd(-30,30),y:G-48,w:39,h:48,type:5,hp:1,maxHp:1,speed:rnd(175,235)*(1+rank*.06),shield:0,age:0,fire:0,thrown:false,small:true,dead:false})}
 function killEnemy(e,byPlayer){if(mode==='boss'&&byPlayer)bossKillCount++;if(e.dead)return;e.dead=true;if(mode==='rescue'&&e.type===2&&!e.small)splitEnemy(e);if(mode==='rescue'&&byPlayer)killed++;if(mode==='boss'&&e.type===3&&!e.small)splitWorkEnemy(e);if(mode==='boss'&&!e.small)bossDefeatedMinions++;burst(e.x+18,e.y+20,'#ffd58b',7,byPlayer)}
@@ -794,7 +829,7 @@ function updateItems(){
 } 
 function useBoost(){if(rank===5&&mode==='boss'){turretPlace();return;}if(mode!=='boss'||bonusBoost<=0||boostTime>0)return;bonusBoost--;boostTime=2;boostKills=0;player.inv=Math.max(player.inv,2);sound('shield');burst(player.x+20,player.y+20,'#ffd86a',22);updateItems()}
 function useCoffee(){if(rank===0&&mode==='rescue'&&tutorialStep===4){player.hp=Math.min(player.max,player.hp+player.max*.35);healFlash=.8;sound('coffee');tutorialMark('heal');updateItems();return;}if(mode!=='boss'||!player||bonusCoffee<1||player.hp>=player.max)return;bonusCoffee--;player.hp=Math.min(player.max,player.hp+player.max*coffeeHeal());healFlash=1.3;sound('coffee');burst(player.x+20,player.y+25,'#77fca5',35);updateItems()}function jump(){if(!player||!['rescue','bonus','boss'].includes(mode))return;if(player.y>=G-player.h-2){player.vy=-390;sound('jump')}}function shield(){if(!player||!['rescue','boss'].includes(mode)||player.cd>0)return;player.shield=rank===5?2.7:2;player.cd=rank===5?7.5:15;sound('shield')}
-function shoot(aim){if(!player||!['rescue','bonus','boss'].includes(mode)||shotClock>0)return;if(mode==='bonus'&&bonusAmmo<=0)return;shotClock=mode==='bonus'?.26:([.338,.27,.208,.18,.18,.105][rank]);let sy=mode==='bonus'?player.y-5:player.y+player.h*.43,dy=0,dx=1;if(mode==='bonus'){bonusAmmo--;const targetY=(aim&&typeof aim.y==='number')?aim.y:bonusAimY;bonusAimY=clamp(targetY,148,425);const vx=650,vy=bonusAimY-sy,len=Math.hypot(vx,vy)||1;dx=vx/len;dy=vy/len}else if(aim&&typeof aim.y==='number'){const vx=Math.max(80,aim.x-player.x-50),vy=aim.y-sy,len=Math.hypot(vx,vy)||1;dx=vx/len;dy=vy/len}const count=rank===5&&mode==='boss'?3:1;
+function shoot(aim){if(!player||!['rescue','bonus','boss'].includes(mode)||shotClock>0)return;if(mode==='bonus'&&bonusAmmo<=0)return;shotClock=mode==='bonus'?.26:([.338,.27,.208,.18,.18,.105][rank]);let sy=player.y-5,dy=0,dx=1; // v67: muzzle follows enlarged ENTJ spriteif(mode==='bonus'){bonusAmmo--;const targetY=(aim&&typeof aim.y==='number')?aim.y:bonusAimY;bonusAimY=clamp(targetY,148,425);const vx=650,vy=bonusAimY-sy,len=Math.hypot(vx,vy)||1;dx=vx/len;dy=vy/len}else if(aim&&typeof aim.y==='number'){const vx=Math.max(80,aim.x-player.x-50),vy=aim.y-sy,len=Math.hypot(vx,vy)||1;dx=vx/len;dy=vy/len}const count=rank===5&&mode==='boss'?3:1;
  for(let i=0;i<count;i++){const offset=count===3?(i-1)*8:0;bullets.push({x:player.x+81,y:sy+offset,vx:dx*790,vy:dy*790,damage:rank===5?13.6:configs[rank].gun,originX:player.x+72,originY:sy+offset,range:mode==='rescue'?(rank===3?300:rank>=4?310:390):mode==='boss'?(rank===5?246:rank===3?405:rank>=4?415:520):1500,dead:false});}
  if(rank===3&&mode!=='bonus'){burst(player.x+53,sy,'#fff2a6',2,true)}sound('fire')}
 function showResultBanner(title,subtitle,success,callback){
@@ -819,7 +854,7 @@ function update(dt){t+=dt;if(rank===0&&mode==='rescue'&&tutorialStep>=tutorialSt
 spawnClock-=dt;const cf=configs[rank],isRescue=mode==='rescue',total=isRescue?cf.rescueTotal:cf.bossTotal,limit=isRescue?cf.rescueMax:cf.bossMax;if((rank!==0||!isRescue||tutorialCombatStarted)&&(rank===5&&!isRescue||spawned<total)&&spawnClock<=0&&enemies.filter(a=>!a.dead).length<(rank===5&&!isRescue?finalWaveLimit():limit)){spawnEnemy();spawnClock=isRescue?Math.max(.5,1.05-rank*.08):(rank===5?finalWaveInterval():Math.max(.45,1.05-rank*.09))}
 if(mode==='boss'&&!bossAppeared&&bossDefeatedMinions>=Math.ceil(cf.bossTotal*2/3)){bossAppeared=true;sound('warning');burst(boss.x+30,boss.y+40,'#ff7777',35)}if(mode==='boss'&&bossAppeared){boss.voice+=dt;if(boss.voice>=3.4){boss.voice=0;boss.phrase=(boss.phrase+1)%bossWords.length}boss.attack-=dt;if(boss.attack<=0){boss.attack=rank===5?1.15:cf.rate;papers.push({x:boss.x-10,y:[G-35,G-49,G-66][Math.floor(rnd(0,3))],vx:-265-rank*16,dead:false});sound('warning')}boss.aoeCD-=dt;if(boss.aoeCD<=0&&Math.abs(player.x+20-(boss.x-22))<230){boss.aoeCD=rank===5?2.2:3.2;zones.push({x:boss.x-22,r:230,warning:.48,life:.24,hit:false,stomp:false});sound('warning')}}
 for(const e of enemies){if(e.dead)continue;e.age+=dt;const direction=e.x>player.x? -1:1;e.x+=direction*e.speed*dt;if(isRescue){if(e.type===0){e.fire-=dt;if(e.fire<=0){e.fire=rnd(.85,1.25);hazards.push({x:e.x,y:e.y+16,vx:direction*265,vy:0,kind:'speech',dead:false});hazards.push({x:e.x,y:e.y+35,vx:direction*245,vy:0,kind:'speech',dead:false})}}}else{if(e.type===1&&!e.thrown&&e.age>.65){e.thrown=true;hazards.push({x:e.x,y:e.y+15,vx:direction*205,vy:-280,kind:'grenade',dead:false})}if(e.type===0||e.type===4){e.fire-=dt;if(e.fire<=0){e.fire=e.type===0?2:1.5;const sx=e.x+(direction<0?-6:e.w+6),sy=e.y+31;hazards.push({x:sx,y:sy,vx:direction*(e.type===0?335:370),vy:0,kind:'shot',dead:false});if(e.type===4)hazards.push({x:sx,y:sy-14,vx:direction*390,vy:0,kind:'shot',dead:false});burst(sx,sy,'#ffad8c',3)}}}if(rank===5&&mode==='boss')for(const tr of turrets){if(!e.dead&&tr.placed&&!tr.dead&&e.x<tr.x+tr.w&&e.x+e.w>tr.x&&e.y<tr.y+tr.h&&e.y+e.h>tr.y){turretDamage(tr,18);killEnemy(e,false);}}if(e.dead)continue;if(e.x<player.x+player.w&&e.x+e.w>player.x&&e.y<player.y+player.h&&e.y+e.h>player.y){if(isRescue&&e.type===3){sound('explode');burst(e.x+20,e.y+25,'#ff9e4d',16)}damage(cf.damage+(isRescue&&e.type===3?4:0),e.x);killEnemy(e,false)}if(e.x<-50||e.x>1100)killEnemy(e,false)}
-for(const h of hazards){h.x+=h.vx*dt;if(h.kind==='documents'){h.vy+=380*dt;h.y+=h.vy*dt;const playerHit=Math.abs(h.x-player.x-20)<25&&Math.abs(h.y-(player.y+player.h*.48))<43;if(playerHit||h.y>=G-9){h.dead=true;burst(h.x,Math.min(h.y,G-9),'#fff3d0',5);sound('explode');if(playerHit)damage(cf.damage*1.3,h.x);for(const tr of turrets)if(tr.placed&&!tr.dead&&Math.abs(h.x-tr.x-20)<34&&Math.abs(h.y-tr.y-25)<45)turretDamage(tr,35)}}else if(h.kind==='grenade'){h.vy+=770*dt;h.y+=h.vy*dt;if(h.y>=G-10){h.dead=true;sound('explode');burst(h.x,G-10,'#ffb061',14);if(Math.abs(h.x-player.x)<60&&player.y+player.h>G-90)damage(cf.damage+4,h.x)}}else{h.y+=h.vy*dt;if(rank===5&&mode==='boss')for(const tr of turrets){if(tr.placed&&!tr.dead&&Math.abs(h.x-tr.x-22)<25&&Math.abs(h.y-tr.y-22)<32){turretDamage(tr,h.kind==='flame'?18:12);h.dead=true;break;}}if(!h.dead&&Math.abs(h.x-player.x-20)<26&&Math.abs(h.y-(player.y+player.h*.48))<43){damage(cf.damage,h.x);h.dead=true}}}hazards=hazards.filter(h=>!h.dead&&h.x>-40&&h.x<1020);
+for(const h of hazards){h.x+=h.vx*dt;if(h.kind==='documents'){h.vy+=380*dt;h.y+=h.vy*dt;const playerHit=Math.abs(h.x-player.x-20)<25&&Math.abs(h.y-(player.y+player.h*.48))<43;if(playerHit||h.y>=G-9){const groundHit=h.y>=G-9&&Math.abs(h.x-(player.x+20))<38&&player.y+player.h>G-60;h.dead=true;burst(h.x,Math.min(h.y,G-9),'#fff3d0',5);sound('explode');if(playerHit||groundHit)damage(cf.damage*1.3,h.x);for(const tr of turrets)if(tr.placed&&!tr.dead&&Math.abs(h.x-tr.x-20)<34&&Math.abs(h.y-tr.y-25)<45)turretDamage(tr,35)}}else if(h.kind==='grenade'){h.vy+=770*dt;h.y+=h.vy*dt;if(h.y>=G-10){h.dead=true;sound('explode');burst(h.x,G-10,'#ffb061',14);if(Math.abs(h.x-player.x)<60&&player.y+player.h>G-90)damage(cf.damage+4,h.x)}}else{h.y+=h.vy*dt;if(rank===5&&mode==='boss')for(const tr of turrets){if(tr.placed&&!tr.dead&&Math.abs(h.x-tr.x-22)<25&&Math.abs(h.y-tr.y-22)<32){turretDamage(tr,h.kind==='flame'?18:12);h.dead=true;break;}}if(!h.dead&&Math.abs(h.x-player.x-20)<26&&Math.abs(h.y-(player.y+player.h*.48))<43){damage(cf.damage,h.x);h.dead=true}}}hazards=hazards.filter(h=>!h.dead&&h.x>-40&&h.x<1020);
 for(const p of papers){p.x+=p.vx*dt;if(rank===5&&mode==='boss')for(const tr of turrets){if(tr.placed&&!tr.dead&&Math.abs(p.x-tr.x-22)<28&&Math.abs(p.y-tr.y-20)<35){turretDamage(tr,16);p.dead=true;break;}}if(!p.dead&&Math.abs(p.x-player.x-20)<32&&Math.abs(p.y-(player.y+player.h*.48))<43){damage(cf.damage,p.x);p.dead=true}}papers=papers.filter(p=>!p.dead&&p.x>-30);
 for(const z of zones){if(z.warning>0){z.warning-=dt;if(z.warning<=.18&&!z.stomp){z.stomp=true;bossStomp=.22;sound('warning')}continue}if(rank===5&&mode==='boss'&&!z.turretHit){z.turretHit=true;for(const tr of turrets)if(tr.placed&&!tr.dead&&Math.abs(tr.x+20-z.x)<z.r)turretDamage(tr,26)}if(!z.hit&&Math.abs(player.x+20-z.x)<z.r&&player.y+player.h>G-95){damage(cf.damage*2,z.x,true);z.hit=true;sound('explode')}z.life-=dt}zones=zones.filter(z=>z.warning>0||z.life>0);
 }
@@ -878,7 +913,7 @@ function paintEnemySprite(e){
    const height=e.small?64:102, width=height*(im.naturalWidth/im.naturalHeight);c.save();c.drawImage(im,e.x+(e.w-width)/2,G-height+4,width,height);c.restore();return true;
  }}
  const map=['enemy_talker','enemy_slacker','enemy_inssa','enemy_ojirap','enemy_inssa'];
- const kind=map[e.type]||'enemy_ojirap';const firstRoundRescue=(rank===0&&mode==='rescue');const h=e.small?58:(firstRoundRescue?100:90),w=e.small?49:(firstRoundRescue?84:76);
+ const kind=map[e.type]||'enemy_ojirap';const firstRoundRescue=(e.firstRoundRescue===true);const h=e.small?58:(firstRoundRescue?118:90),w=e.small?49:(firstRoundRescue?100:76);
  return paintPhaseArt(kind,e.x+(e.w-w)/2,G-h+5,w,h);
 }
 const bossArtwork={};
@@ -987,7 +1022,7 @@ if(rank===5&&(mode==='boss'||mode==='bossDeath'||mode==='finalClear')){
 }
  }
  for(const e of enemies){const name=(mode==='rescue'||mode==='rescueLanding')?rescueNames[e.type]:workNames[e.type];const color=(mode==='rescue'||mode==='rescueLanding')?['#a0749e','#a3a06e','#d5a16c','#d16f75','#e5a86e'][e.type]:['#6a88a6','#aa9563','#d34b58','#ac7894','#738e9d','#ffad68'][e.type];paintEnemySprite(e)||character(e.x,e.y,color,false,false,e.small?1:1);if(enemies.length<=3&&rank!==5)text(name,e.x+e.w/2,e.y-13,e.small?12:14,'#fff');if(mode==='boss'&&e.type===2)text('⚡',e.x+e.w/2,e.y-33,20,'#ff6471');if(mode==='boss'&&e.type===3)text('×3',e.x+e.w/2,e.y-31,16,'#ffd08a');if(e.shield){if(mode==='boss')text('🛡'+e.shield,e.x+19,e.y-50,17,'#ff9c9c');c.strokeStyle=mode==='boss'?'#ff404f':'#82d7ff';c.lineWidth=4;c.beginPath();c.arc(e.x+18,e.y+28,37,0,7);c.stroke()}}
-for(const h of hazards){if(h.kind==='speech'){if(!paintPhaseArt('projectile_speech',h.x-17,h.y-17,34,34)){c.fillStyle='#ffb4d0';c.beginPath();c.arc(h.x,h.y,12,0,7);c.fill();text('!',h.x,h.y+5,15,'#8d244d')}}else if(h.kind==='grenade'){if(!drawCombatSprite('projectile_timed_bomb',h.x-20,h.y-22,40,40)){c.fillStyle='#99b276';c.beginPath();c.arc(h.x,h.y,12,0,7);c.fill()}}else if(h.kind==='documents'){const doc=aerialArt.projectile_documents;if(doc&&doc.complete&&doc.naturalWidth){c.save();c.translate(h.x,h.y);c.rotate(Math.sin(t*8+h.x*.01)*.10);c.drawImage(doc,-23,-21,46,42);c.restore()}else drawFlyingDocument(h.x,h.y,1,0)}else if(h.kind==='flame'){if(!drawCombatSprite('projectile_final_fireball',h.x-24,h.y-24,48,48)){c.fillStyle='#ff6b26';c.beginPath();c.arc(h.x,h.y,17,0,7);c.fill()}}else rect(h.x,h.y,15,6,'#ff9a8a')}
+for(const h of hazards){if(h.kind==='speech'){if(!paintPhaseArt('projectile_speech',h.x-17,h.y-17,34,34)){c.fillStyle='#ffb4d0';c.beginPath();c.arc(h.x,h.y,12,0,7);c.fill();text('!',h.x,h.y+5,15,'#8d244d')}}else if(h.kind==='grenade'){if(!drawCombatSprite('projectile_timed_bomb',h.x-20,h.y-22,40,40)){c.fillStyle='#99b276';c.beginPath();c.arc(h.x,h.y,12,0,7);c.fill()}}else if(h.kind==='documents'){const doc=aerialArt.projectile_documents;if(doc&&doc.complete&&doc.naturalWidth){c.save();c.translate(h.x,h.y);c.drawImage(doc,-23,-21,46,42);c.restore()}else drawFlyingDocument(h.x,h.y,1,0)}else if(h.kind==='flame'){if(!drawCombatSprite('projectile_final_fireball',h.x-24,h.y-24,48,48)){c.fillStyle='#ff6b26';c.beginPath();c.arc(h.x,h.y,17,0,7);c.fill()}}else rect(h.x,h.y,15,6,'#ff9a8a')}
 for(const p of papers){const doc=aerialArt.projectile_documents;if(doc&&doc.complete&&doc.naturalWidth){c.save();c.translate(p.x,p.y);c.rotate(-.17+Math.sin(t*6+p.x*.06)*.12);c.drawImage(doc,-22,-18,44,36);c.restore()}else drawFlyingDocument(p.x,p.y,1,0)}
 if(bossStomp>0){bossStomp=Math.max(0,bossStomp-.016);text('쿵!',boss.x-10,boss.y-25,34,'#ffac65')}for(const z of zones){c.beginPath();c.ellipse(z.x,G-2,z.r,39,0,0,7);c.fillStyle=z.warning>0?'#f04a4a77':'#ffa04bbb';c.fill();c.strokeStyle=z.warning>0?'#ff4545':'#ffd06a';c.lineWidth=5;c.stroke()}
 for(const a of coffees){if(!drawCombatSprite('item_coffee_drop',a.x-23,a.y-25,46,50)){text('커피',a.x,a.y,17,'#fff')}text('+10',a.x,a.y-35,15,'#94ffba')}
